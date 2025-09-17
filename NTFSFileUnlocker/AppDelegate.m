@@ -18,11 +18,17 @@
 
 @implementation AppDelegate
 
-@synthesize dragView = _dragView;
+@synthesize window, dragView;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    [_dragView registerForDraggedTypes:[NSArray arrayWithObject:NSFilenamesPboardType]];
-    [_dragView setOpenerDelegate:self];
+    // Set title icon.
+    [window setRepresentedURL:[NSURL URLWithString:[window title]]];
+    NSButton* titleBtn = [window standardWindowButton:NSWindowDocumentIconButton];
+    [titleBtn setImage:[[NSBundle mainBundle]imageForResource:@"AppIcon"]];
+    [titleBtn setEnabled:NO];
+    
+    [dragView registerForDraggedTypes:[NSArray arrayWithObject:NSFilenamesPboardType]];
+    [dragView setOpenerDelegate:self];
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {
@@ -49,14 +55,14 @@
     
     // For command processing and opening
     do {
-        xattrCommand = [NSString stringWithFormat:@"%@ %@ %@", commandStr, attrName, path];
+        xattrCommand = [NSString stringWithFormat:@"%@ %@ \"%@\"", commandStr, attrName, path];
         ret = system([xattrCommand cStringUsingEncoding:NSUTF8StringEncoding]);
         if (ret) {
             NSLog(@"xattr command processing failed!");
             break;
         }
         
-        openCommand = [NSString stringWithFormat:@"open %@", path];
+        openCommand = [NSString stringWithFormat:@"open \"%@\"", path];
         ret = system([openCommand cStringUsingEncoding:NSUTF8StringEncoding]);
         if (ret) {
             NSLog(@"Can't open file or dictionary!");
