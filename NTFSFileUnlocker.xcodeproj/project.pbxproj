@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34C07E512E863ADF00FA47CC /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 34C07E4F2E863ADF00FA47CC /* Credits.rtf */; };
 		34F837D52E7AD21A006A3781 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F837D42E7AD21A006A3781 /* AppDelegate.m */; };
 		34F837D72E7AD21A006A3781 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34F837D62E7AD21A006A3781 /* Assets.xcassets */; };
 		34F837DA2E7AD21A006A3781 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F837D82E7AD21A006A3781 /* MainMenu.xib */; };
@@ -15,6 +16,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34C07E4E2E862F5000FA47CC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.strings"; sourceTree = "<group>"; };
+		34C07E502E863ADF00FA47CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Base; path = Base.lproj/Credits.rtf; sourceTree = "<group>"; };
+		34C07E552E86644700FA47CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		34C07E562E86644800FA47CC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hans"; path = "zh-Hans.lproj/Credits.rtf"; sourceTree = "<group>"; };
 		34F837D02E7AD21A006A3781 /* NTFSFileUnlocker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NTFSFileUnlocker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F837D32E7AD21A006A3781 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		34F837D42E7AD21A006A3781 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -64,6 +69,7 @@
 				34F837E42E7AD26E006A3781 /* NFUDragView.m */,
 				34F837D62E7AD21A006A3781 /* Assets.xcassets */,
 				34F837D82E7AD21A006A3781 /* MainMenu.xib */,
+				34C07E4F2E863ADF00FA47CC /* Credits.rtf */,
 				34F837DB2E7AD21A006A3781 /* Info.plist */,
 				34F837DC2E7AD21A006A3781 /* main.m */,
 				34F837DE2E7AD21A006A3781 /* NTFSFileUnlocker.entitlements */,
@@ -112,6 +118,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 34F837C72E7AD21A006A3781;
 			productRefGroup = 34F837D12E7AD21A006A3781 /* Products */;
@@ -129,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34F837D72E7AD21A006A3781 /* Assets.xcassets in Resources */,
+				34C07E512E863ADF00FA47CC /* Credits.rtf in Resources */,
 				34F837DA2E7AD21A006A3781 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,11 +157,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		34C07E4F2E863ADF00FA47CC /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34C07E502E863ADF00FA47CC /* Base */,
+				34C07E552E86644700FA47CC /* en */,
+				34C07E562E86644800FA47CC /* zh-Hans */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
 		34F837D82E7AD21A006A3781 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				34F837D92E7AD21A006A3781 /* Base */,
 				34F837E82E7AD50D006A3781 /* en */,
+				34C07E4E2E862F5000FA47CC /* zh-Hans */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -165,6 +184,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -223,6 +243,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

@@ -27,6 +27,7 @@
     [titleBtn setImage:[[NSBundle mainBundle]imageForResource:@"AppIcon"]];
     [titleBtn setEnabled:NO];
     
+    //Register for dragging events
     [dragView registerForDraggedTypes:[NSArray arrayWithObject:NSFilenamesPboardType]];
     [dragView setOpenerDelegate:self];
 }
@@ -39,7 +40,7 @@
     
 }
 
-- (int) xattrCommandWithPath:(NSString*)path FileType:(BOOL)isFile {
+- (int) xattrCommandWithPath:(NSString*)path FileType:(BOOL)isDictionary {
     int ret;
     NSString* xattrCommand;
     NSString* openCommand;
@@ -47,7 +48,7 @@
     NSString* attrName = kAttrName;
     
     // For command prefix
-    if (isFile) {
+    if (!isDictionary) {
         commandStr = @"xattr -d";
     } else {
         commandStr = @"xattr -d -r";

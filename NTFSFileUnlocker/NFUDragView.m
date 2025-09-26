@@ -18,19 +18,9 @@
 @synthesize openerDelegate;
 @synthesize isHighlight;
 
-- (id)initWithFrame:(NSRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code here.
-    }
-    
-    return self;
-}
 
-- (void)drawRect:(NSRect)dirtyRect
-{
-    // Drawing code here.
+- (void)drawRect:(NSRect)dirtyRect {
+    // Hard codes for drawing window.
     NSRect rect = NSInsetRect([self frame], 5, 5);
     CGContextRef context = (CGContextRef)[[NSGraphicsContext currentContext] graphicsPort];
     CGContextSetLineWidth(context, 8);
@@ -40,44 +30,43 @@
     CGContextSetStrokeColor(context, opaqueGray);
     CGContextStrokeRect(context, NSRectToCGRect(rect));
     
-    NSString* text = isHighlight?@"Release and it will be opened":@"Drag file or dictionary here";
+    // Draw localized strings for the window and set attributes.
+    NSString* text = isHighlight?
+    NSLocalizedStringFromTable(@"NFUReleaseString", @"MainMenu", @"Release and it will be opened"):
+    NSLocalizedStringFromTable(@"NFUDragString", @"MainMenu", @"Drag file or dictionary here");
+
     NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     [style setAlignment:NSTextAlignmentCenter];
     NSMutableDictionary* stringAttributes = [NSMutableDictionary dictionaryWithCapacity:2];
-    
+
     [stringAttributes setObject:[NSFont fontWithName:@"Helvetica" size:30] forKey:NSFontAttributeName];
     [stringAttributes setObject:style forKey:NSParagraphStyleAttributeName];
     [stringAttributes setObject:[NSColor grayColor] forKey:NSForegroundColorAttributeName];
     [text drawInRect:NSMakeRect(0, rect.origin.y/2+30, rect.size.width, rect.size.height/2) withAttributes:stringAttributes];
 }
 
-- (NSDragOperation)draggingEntered:(id < NSDraggingInfo >)sender
-{
+- (NSDragOperation)draggingEntered:(id < NSDraggingInfo >)sender {
     self.isHighlight = YES;
     [self setNeedsDisplay:YES];
-    return  NSDragOperationGeneric;
-}
-
-- (NSDragOperation)draggingUpdated:(id < NSDraggingInfo >)sender
-{
     return NSDragOperationGeneric;
 }
 
-- (void)draggingExited:(id < NSDraggingInfo >)sender
-{
+- (NSDragOperation)draggingUpdated:(id < NSDraggingInfo >)sender {
+    return NSDragOperationGeneric;
+}
+
+- (void)draggingExited:(id < NSDraggingInfo >)sender {
     self.isHighlight = NO;
     [self setNeedsDisplay:YES];
 }
 
-- (BOOL)prepareForDragOperation:(id < NSDraggingInfo >)sender
-{
+- (BOOL)prepareForDragOperation:(id < NSDraggingInfo >)sender {
     self.isHighlight = NO;
     [self setNeedsDisplay:YES];
     return YES;
 }
 
-- (BOOL)performDragOperation:(id < NSDraggingInfo >)sender
-{
+- (BOOL)performDragOperation:(id < NSDraggingInfo >)sender {
     NSPasteboard* pboard = [sender draggingPasteboard];
     
     if ( [[pboard types] containsObject:NSFilenamesPboardType] ) {
@@ -97,6 +86,9 @@
     
     fileManager = [NSFileManager defaultManager];
     
+    /* If it's not a exist file or dictionary,
+       we should throw an exception.*/
+
     @try {
         if (![fileManager fileExistsAtPath:path isDirectory:&ret]) {
             exception = [NSException exceptionWithName:@"FilesOrDictionariesNotExistException" reason:@"The files or dictionaries are not exist!" userInfo:nil];

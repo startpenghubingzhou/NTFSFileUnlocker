@@ -3,10 +3,10 @@
 "1Xt-HY-uBw.title" = "NTFSFileUnlocker";
 
 /* Class = "NSMenuItem"; title = "Quit NTFSFileUnlocker"; ObjectID = "4sb-4s-VLi"; */
-"4sb-4s-VLi.title" = "Quit NTFSFileUnlocker";
+"4sb-4s-VLi.title" = "退出 NTFSFileUnlocker";
 
 /* Class = "NSMenuItem"; title = "About NTFSFileUnlocker"; ObjectID = "5kV-Vb-QxS"; */
-"5kV-Vb-QxS.title" = "About NTFSFileUnlocker";
+"5kV-Vb-QxS.title" = "关于 NTFSFileUnlocker";
 
 /* Class = "NSWindow"; title = "NTFSFileUnlocker"; ObjectID = "QvC-M9-y7g"; */
 "QvC-M9-y7g.title" = "NTFSFileUnlocker";
@@ -15,7 +15,7 @@
 "uQy-DD-JDr.title" = "NTFSFileUnlocker";
 
 /* NFUReleaseString: Release and it will be opened */
-"NFUReleaseString" = "Release and it will be opened";
+"NFUReleaseString" = "释放以打开";
 
 /* NFUDragString: Release and it will be opened */
-"NFUDragString" = "Drag file or dictionary here";
+"NFUDragString" = "拖拽文件或目录到此";

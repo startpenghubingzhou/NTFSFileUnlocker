@@ -41,6 +41,7 @@
                     </menu>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="104" y="-58"/>
         </menu>
         <window title="NTFSFileUnlocker" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
@@ -50,6 +51,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
             </view>
+            <point key="canvasLocation" x="123" y="201"/>
         </window>
     </objects>
 </document>
