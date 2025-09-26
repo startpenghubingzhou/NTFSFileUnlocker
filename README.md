@@ -1,2 +1,8 @@
 # NTFSFileUnlocker
- A tool to unlock files in the NTFS volumn when system reset
+ This is a small tool for unlocking files in NTFS partitions.
+
+If you are using some NTFS read-write tools such as Mounty, you may find that some files may be locked and display in gray when you restart your computer, which can't be opearated.
+
+This tool will help you to solve this problem. Just drag your files and file dictionaries in the NTFS partition into the tool,  and it will unlock them automatically.
+
+This software is under MIT license.
