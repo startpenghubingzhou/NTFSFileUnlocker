@@ -1,6 +1,6 @@
 # NTFSFileUnlocker
 
-[English](https://github.com/startpenghubingzhou/NTFSFileUnlocker)|中文
+[English](https://github.com/startpenghubingzhou/NTFSFileUnlocker)|[中文](https://github.com/startpenghubingzhou/NTFSFileUnlocker/blob/main/README_CN.md)
 
 ## 这是什么？
 
