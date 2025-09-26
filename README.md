@@ -1,4 +1,6 @@
 # NTFSFileUnlocker
+[English](https://github.com/startpenghubingzhou/NTFSFileUnlocker)|中文
+
 ## What's it?
 
  This is a small tool for unlocking files in NTFS partitions.
